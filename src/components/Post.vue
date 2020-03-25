@@ -10,7 +10,8 @@
     <b-field>
       <b-button @click="clap(id)" class="button is-primary">clap</b-button>
       <b-button @click="del(id)" class="button is-primary">del</b-button>
-      <b-button @click="edit(id)" class="button is-primary">edit</b-button>
+      <router-link :to="{ name: 'Edit', params: { id: id }}" class="button is-primary">Go to Foo</router-link>
+      <b-button @click="edit(id)">edit</b-button>
     </b-field>
   </div>
 </template>
@@ -18,8 +19,7 @@
   export default {
     name: 'PostComponent',
     props: ['id', 'title', 'description', 'claps', 'createdAt', 'updateAt', 'userId'],
-    computed: {
-    },
+    computed: {},
     methods: {
       clap: function (id) {
         this.$store.commit('clapPost', id)
@@ -31,9 +31,6 @@
         this.$store.commit('editPost', id)
       }
     }
-
   }
 </script>
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

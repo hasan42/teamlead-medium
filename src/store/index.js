@@ -30,6 +30,9 @@ export default new Vuex.Store({
     getItems: (state) => () => {
       return state.posts
     },
+    getItemByIdForEdit: (state) => (id) => {
+      return state.posts.find(el=>el.id===id);
+    },
   },
   mutations: {
     clapPost(state, id) {
@@ -40,8 +43,13 @@ export default new Vuex.Store({
       let el = state.posts.findIndex(el => el.id === id);
       state.posts.splice(el, 1);
     },
-    editPost(state, id){
-      console.log(id)
+    editPost(state, obj){
+      let post = state.posts.find(el=>el.id===obj.id);
+      let date = Date.now();
+      console.log(obj)
+      post.title = obj.title;
+      post.description = obj.description;
+      post.updateAt = date;
     },
   },
   actions: {

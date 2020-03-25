@@ -19,9 +19,6 @@
 <script>
   export default {
     name: 'LoginComponent',
-    props: {
-      msg: String
-    },
     data() {
       return {
         name: 'John Silver',
@@ -30,6 +27,4 @@
     }
   }
 </script>
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
