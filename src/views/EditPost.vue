@@ -7,7 +7,7 @@
 <script>
 import EditPostComponent from '@/components/EditPost.vue'
 export default {
-  name: 'Edit',
+  name: 'EditPost',
   components: {
     EditPostComponent
   }

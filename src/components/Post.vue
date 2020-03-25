@@ -10,8 +10,7 @@
     <b-field>
       <b-button @click="clap(id)" class="button is-primary">clap</b-button>
       <b-button @click="del(id)" class="button is-primary">del</b-button>
-      <router-link :to="{ name: 'Edit', params: { id: id }}" class="button is-primary">Go to Foo</router-link>
-      <b-button @click="edit(id)">edit</b-button>
+      <router-link :to="{ name: 'Edit', params: { id: id }}" class="button is-primary">edit</router-link>
     </b-field>
   </div>
 </template>

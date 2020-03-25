@@ -46,10 +46,23 @@ export default new Vuex.Store({
     editPost(state, obj){
       let post = state.posts.find(el=>el.id===obj.id);
       let date = Date.now();
-      console.log(obj)
       post.title = obj.title;
       post.description = obj.description;
       post.updateAt = date;
+    },
+    newPost(state, obj){
+      let maxId = Math.max.apply(Math, state.posts.map(item => item.id))
+      maxId = maxId == -Infinity ? 0 : maxId;
+      let date = Date.now();
+      state.posts.push({
+        id: maxId + 1,
+        title: obj.title,
+        description: obj.description,
+        claps: 0,
+        createdAt: date,
+        updateAt: date,
+        userId: 3
+      });
     },
   },
   actions: {
