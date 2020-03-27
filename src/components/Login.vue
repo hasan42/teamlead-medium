@@ -1,17 +1,18 @@
 <template>
   <section>
-    <p>{{login}}</p>
     <b-field label="Login">
       <b-input type="email" 
                v-model="form.login"></b-input>
     </b-field>
     <b-field label="Password">
-      <b-input type="password"
-               v-model="form.password"
-               password-reveal>
+      <b-input type="password" autocomplete="off"
+               v-model="form.password">
       </b-input>
     </b-field>
-             <p v-if="errorMsg">Wrong login or password</p>
+    <b-field  v-if="showMessage"
+               type="is-danger"
+               message="Wrong login or password">
+    </b-field>
     <b-field>
       <b-button class="button is-primary" @click="loginIn()">Login</b-button>
     </b-field>
@@ -24,9 +25,8 @@
     name: 'LoginComponent',
     data() {
       return {
-        newlogin: null,
-        oldlogin: null,
-        showMessage: false,
+        newloginW: null,
+        oldloginW: null,
         form: {
           login: '',
           password: '',
@@ -37,17 +37,13 @@
       login() {
         return this.$store.state['users'].user
       },
-      errorMsg(){
-        return this.$store.state['errorMsg']
+      showMessage(){
+        return this.$store.state['users'].errorMsg
       }
     },
     watch: {
-      // эта функция запускается при любом изменении вопроса
-      login: (newLogin) => () => {
-        console.log(newLogin)
-        if(newLogin === null){
-          this.showMessage = true;
-        }else{
+      login: function (newlogin) {
+        if(newlogin !== null){
           this.$router.push({ name: "Home"})
         }
       }

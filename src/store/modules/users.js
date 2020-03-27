@@ -22,12 +22,10 @@ export default {
         if(res.data.length > 0){
           state.user = res.data;
           state.errorMsg = false;
-          // console.log(state.user)
         }else{
           // console.log('no enter')
           state.user = null;
           state.errorMsg = true;
-          // console.log(state.user)
         }
       } catch(e) {
         console.error(e)
