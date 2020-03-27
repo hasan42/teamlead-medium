@@ -1,17 +1,15 @@
 <template>
   <section>
-    <b-field label="title"
-             type="is-success"
-             message="This title is available">
+    <b-field label="title">
       <b-input v-model="form.title"></b-input>
     </b-field>
     <b-field label="description">
-      <b-input type="is-success"
+      <b-input type="textarea"
                v-model="form.description">
       </b-input>
     </b-field>
     <b-field>
-      <b-button @click="newPost()" class="button is-primary">edit</b-button>
+      <b-button @click="newPost()" class="button is-primary">Create</b-button>
     </b-field>
   </section>
 </template>
