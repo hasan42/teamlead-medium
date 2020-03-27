@@ -1,33 +1,56 @@
 <template>
-  <div class="post">
+  <div class="tile is-vertical box">
     <p>{{id}}</p>
-    <p>{{title}}</p>
+    <p class="title">{{title}}</p>
     <p>{{description}}</p>
-    <p>{{claps}}</p>
-    <p>{{createdAt}}</p>
-    <p>{{updateAt}}</p>
+    
     <p>{{userId}}</p>
-    <b-field>
-      <b-button @click="clap(id)" class="button is-primary">clap</b-button>
-      <b-button @click="del(id)" class="button is-primary">del</b-button>
-      <router-link :to="{ name: 'Edit', params: { id: id }}" class="button is-primary">edit</router-link>
-    </b-field>
+    
+    <div class="level">
+      <div class="level-left">
+        <div class="level-item">
+          <p>claps: {{claps}}</p>
+        </div>
+        <div class="level-item">
+          <p>{{create}}</p>
+        </div>
+        <div class="level-item" v-if="update">
+          <p>update: {{update}}</p>
+        </div>
+      </div>
+
+      <div class="level-right">
+        <p class="level-item"><b-button @click="clap(id)" class="button is-primary">clap</b-button></p>
+        <p class="level-item"><b-button @click="del(id)" class="button is-primary">del</b-button></p>
+        <p class="level-item"><router-link :to="{ name: 'Edit', params: { id: id }}" class="button is-primary">edit</router-link></p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
   export default {
     name: 'PostComponent',
+    data(){
+      return {
+        create: null,
+        update: null
+      }
+    },
     props: ['id', 'title', 'description', 'claps', 'createdAt', 'updateAt', 'userId'],
     computed: {},
+    mounted() {
+      this.create = new Date(this.createdAt).toDateString()
+      this.update = this.createdAt === this.updateAt ? null : new Date(this.updateAt).toDateString()
+    },
     methods: {
       clap: function (id) {
-        this.$store.commit('clapPost', id)
+        this.$store.commit('posts/clapPost', id)
       },
       del: function (id) {
-        this.$store.commit('deletePost', id)
+        this.$store.commit('posts/deletePost', id)
       },
       edit: function (id) {
-        this.$store.commit('editPost', id)
+        this.$store.commit('posts/editPost', id)
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="tile is-ancestor">
     <ListComponent />
   </div>
 </template>
@@ -12,6 +12,9 @@ export default {
   name: 'Home',
   components: {
     ListComponent
-  }
+  },
+  mounted: function () {
+    this.$store.commit('posts/getPostsRemote')
+  },
 }
 </script>

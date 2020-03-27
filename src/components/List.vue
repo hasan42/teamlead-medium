@@ -1,5 +1,5 @@
 <template>
-  <div class="list">
+  <div class="tile is-vertical is-ancestor">
     <PostComponent  v-for="post of itemsStore"
         :key="post.id"
         :id="post.id"
@@ -22,7 +22,7 @@
     },
     computed: {
       itemsStore () {
-        return this.$store.getters['getItems']()
+        return this.$store.getters['posts/getItems']()
       }
     },
     methods: {}

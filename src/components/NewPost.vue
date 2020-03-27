@@ -35,7 +35,12 @@
           title: this.form.title,
           description: this.form.description
         }
-        this.$store.commit('newPost', obj)
+
+        this.form.title = '';
+        this.form.description = '';
+
+        this.$store.commit('posts/newPost', obj)
+        this.$router.push({ name: "Home"})
       }
     }
   }

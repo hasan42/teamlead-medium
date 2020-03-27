@@ -28,7 +28,7 @@
       }
     },
     mounted: function () {
-      let obj = this.$store.getters['getItemByIdForEdit'](this.$route.params.id)
+      let obj = this.$store.getters['posts/getItemByIdForEdit'](this.$route.params.id)
       this.form.title = obj.title
       this.form.description = obj.description
     },
@@ -39,7 +39,11 @@
           title: this.form.title,
           description: this.form.description
         }
-        this.$store.commit('editPost', obj)
+        this.form.title = '';
+        this.form.description = '';
+
+        this.$store.commit('posts/editPost', obj)
+        this.$router.push({ name: "Home"})
       }
     }
   }
