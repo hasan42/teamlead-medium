@@ -58,27 +58,15 @@ export default {
       }
     },
     async deletePost(state, id){
-      /* DONT WORK FIX*/
       try {
-        console.log(String(id))
-        // const res = await Axios.delete( `${state.baseURL}`,  { params: { userId: 3 } })
-        // let qwe = state.baseURL + '/' + id
-        Axios({
-            method: 'delete',
-            url: state.baseURL,
-            params: { id: "a" },
-            headers: {'Access-Control-Allow-Origin': '*'}
-          })
-          .then(resp => {
-            console.log(resp)
-          }).catch(error => {
-            console.log(error);
-          });
-        // console.log(res)
+        await Axios.delete( `${state.baseURL}/${id}`).then((response) => {
+          if(response){
+            this.commit('posts/getPostsByPageRemote')
+          }
+        });
       } catch(e) {
         console.error(e)
       }
-      /* DONT WORK FIX*/
     },
     async newPost(state, obj){
       try {

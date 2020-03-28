@@ -15,15 +15,6 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "Назwвeанwиweе поста12354qwe4",
-      "description": "Текст1",
-      "claps": 22,
-      "createdAt": "2019-09-29T00:00:00.000Z",
-      "updateAt": "2020-03-28T11:12:36.600Z",
-      "userId": 1
-    },
-    {
       "id": 2,
       "title": "1Названwие поста11112",
       "description": "1Текст",
@@ -120,15 +111,6 @@
       "claps": 0,
       "createdAt": "2020-03-28T11:02:17.158Z",
       "updateAt": "2020-03-28T11:02:17.158Z",
-      "userId": 1
-    },
-    {
-      "id": 13,
-      "title": "ghfghf",
-      "description": "fghfghfgh",
-      "claps": 0,
-      "createdAt": "2020-03-28T11:02:45.395Z",
-      "updateAt": "2020-03-28T11:02:45.395Z",
       "userId": 1
     },
     {
