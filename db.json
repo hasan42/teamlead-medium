@@ -16,20 +16,20 @@
   "posts": [
     {
       "id": 1,
-      "title": "Название поста123qwe",
+      "title": "Назwвeанwиweе поста12354qwe4",
       "description": "Текст1",
-      "claps": 21,
+      "claps": 22,
       "createdAt": "2019-09-29T00:00:00.000Z",
-      "updateAt": "2020-03-26T14:35:21.519Z",
+      "updateAt": "2020-03-28T11:12:36.600Z",
       "userId": 1
     },
     {
       "id": 2,
-      "title": "1Название поста11112",
+      "title": "1Названwие поста11112",
       "description": "1Текст",
-      "claps": 25,
+      "claps": 26,
       "createdAt": "2019-09-29T00:00:00.000Z",
-      "updateAt": "2020-03-26T14:34:09.698Z",
+      "updateAt": "2020-03-28T11:04:03.143Z",
       "userId": 2
     },
     {
@@ -63,9 +63,81 @@
       "id": 6,
       "title": "asd",
       "description": "",
-      "claps": 0,
+      "claps": 1,
       "createdAt": "2020-03-26T14:25:52.130Z",
       "updateAt": "2020-03-26T14:25:52.130Z",
+      "userId": 1
+    },
+    {
+      "id": 7,
+      "title": "qwe",
+      "description": "qwe",
+      "claps": 0,
+      "createdAt": "2020-03-28T10:35:57.508Z",
+      "updateAt": "2020-03-28T10:35:57.508Z",
+      "userId": 1
+    },
+    {
+      "id": 8,
+      "title": "qweasd",
+      "description": "asdasd",
+      "claps": 0,
+      "createdAt": "2020-03-28T10:36:01.662Z",
+      "updateAt": "2020-03-28T10:36:01.662Z",
+      "userId": 1
+    },
+    {
+      "id": 9,
+      "title": "zxczxc",
+      "description": "zxczxc",
+      "claps": 0,
+      "createdAt": "2020-03-28T10:36:05.321Z",
+      "updateAt": "2020-03-28T10:36:05.321Z",
+      "userId": 1
+    },
+    {
+      "id": 10,
+      "title": "cvxbxcvb",
+      "description": "xcbvxcbv",
+      "claps": 0,
+      "createdAt": "2020-03-28T10:36:18.278Z",
+      "updateAt": "2020-03-28T10:36:18.278Z",
+      "userId": 1
+    },
+    {
+      "id": 11,
+      "title": "gjfh",
+      "description": "jgfh",
+      "claps": 0,
+      "createdAt": "2020-03-28T10:36:25.273Z",
+      "updateAt": "2020-03-28T10:36:25.273Z",
+      "userId": 1
+    },
+    {
+      "id": 12,
+      "title": "kjghfd",
+      "description": "gnbvc",
+      "claps": 0,
+      "createdAt": "2020-03-28T11:02:17.158Z",
+      "updateAt": "2020-03-28T11:02:17.158Z",
+      "userId": 1
+    },
+    {
+      "id": 13,
+      "title": "ghfghf",
+      "description": "fghfghfgh",
+      "claps": 0,
+      "createdAt": "2020-03-28T11:02:45.395Z",
+      "updateAt": "2020-03-28T11:02:45.395Z",
+      "userId": 1
+    },
+    {
+      "id": 14,
+      "title": "576",
+      "description": "576",
+      "claps": 0,
+      "createdAt": "2020-03-28T11:03:10.279Z",
+      "updateAt": "2020-03-28T11:03:10.279Z",
       "userId": 1
     }
   ]

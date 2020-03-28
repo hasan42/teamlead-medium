@@ -1,6 +1,6 @@
 <template>
   <div class="tile is-vertical is-ancestor">
-    <PostComponent  v-for="post of itemsStore"
+    <PostComponent  v-for="post of posts"
         :key="post.id"
         :id="post.id"
         :title="post.title"
@@ -9,6 +9,17 @@
         :createdAt="post.createdAt"
         :updateAt="post.updateAt"
         :userId="post.userId" />
+
+    <hr>
+    <b-pagination
+        :total="pageCount"
+        :per-page="perPage"
+        :current.sync="currentPage"
+        aria-next-label="Next page"
+        aria-previous-label="Previous page"
+        aria-page-label="Page"
+        aria-current-label="Current page">
+    </b-pagination>
   </div>
 </template>
 
@@ -20,12 +31,28 @@
     components: {
       PostComponent
     },
-    computed: {
-      itemsStore () {
-        return this.$store.getters['posts/getItems']()
+    data() {
+      return {
+        perPage: 10,
+        currentPage: 1
       }
     },
-    methods: {}
+    watch: {
+      currentPage(newVal){
+        this.currentPage = newVal;
+        this.$store.commit('posts/changePage',this.currentPage)
+      }
+    },
+    computed: {
+      posts () {
+        return this.$store.state['posts'].posts
+      },
+      pageCount(){
+        return this.$store.state['posts'].postsLength
+      },
+    },
+    methods: {
+    }
   }
 </script>
 <style scoped lang="scss">

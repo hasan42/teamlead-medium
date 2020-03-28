@@ -44,16 +44,6 @@
         }else{
           return false
         }
-        // console.log('role',this.$store.state['users'].user[0].role)
-        // return this.$store.state['users'].user
-      }
-    },
-    watch: {
-      role: function (newRole) {
-        console.log(newRole.then((resp)=>{console.log(resp)}))
-        // if(newlogin !== null){
-        //   this.$router.push({ name: "Home"})
-        // }
       }
     },
     mounted() {

@@ -14,7 +14,8 @@ export default {
     ListComponent
   },
   mounted: function () {
-    this.$store.commit('posts/getPostsRemote')
+    this.$store.commit('posts/getAllPostsRemote')
+    this.$store.commit('posts/getPostsByPageRemote')
   },
 }
 </script>

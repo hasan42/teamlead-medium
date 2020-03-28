@@ -5,8 +5,14 @@ export default {
   state: {
     baseURL: "http://localhost:3000/posts",
     posts: [],
+    currentPage: 1,
+    postsLength: null
   },
   getters: {
+    getPageLength: (state)=>()=>{
+      const res = Axios.get(`${state.baseURL}`)
+      return res.data.length;
+    },
     getItems: (state) => () => {
       return state.posts
     },
@@ -15,9 +21,25 @@ export default {
     },
   },
   mutations: {
+    async getAllPostsRemote(state){
+      try {
+        const res = await Axios.get(`${state.baseURL}`);
+        state.postsLength = res.data.length;
+      } catch(e) {
+        console.error(e)
+      }
+    },
     async getPostsRemote(state){
       try {
-        const res = await Axios.get(state.baseURL)
+        const res = await Axios.get(`${state.baseURL}`);
+        state.posts = res.data;
+      } catch(e) {
+        console.error(e)
+      }
+    },
+    async getPostsByPageRemote(state){
+      try {
+        const res = await Axios.get(`${state.baseURL}?_page=${state.currentPage}`)
         state.posts = res.data;
       } catch(e) {
         console.error(e)
@@ -97,14 +119,19 @@ export default {
         post = {...post, ...editedPost};
 
         await Axios.put(`${state.baseURL}/${obj.id}`, post).then((response) => {
-          console.log(response)
-          this.mutations.getPostsRemote()
+          // console.log(response)
+          if(response){
+            this.commit('posts/getPostsRemote')
+          }
         });
       } catch(e) {
         console.error(e)
       }
-        
     },
+    changePage(state,page){
+      state.currentPage = page;
+      this.commit('posts/getPostsByPageRemote')
+    }
   },
   actions: {
   },

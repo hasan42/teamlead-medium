@@ -18,6 +18,7 @@
         <b-button class="button is-primary" @click="loginIn()">Login</b-button>
       </b-field>
     </div>
+    
     <div v-if="login !== null">
       <p>{{login[0].login}}</p>
       <p>{{login[0].role}}</p>
