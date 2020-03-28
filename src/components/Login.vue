@@ -33,8 +33,6 @@
     name: 'LoginComponent',
     data() {
       return {
-        newloginW: null,
-        oldloginW: null,
         form: {
           login: '',
           password: '',

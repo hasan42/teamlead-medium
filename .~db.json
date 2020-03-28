@@ -18,7 +18,7 @@
       "id": 1,
       "title": "Название поста123qwe",
       "description": "Текст1",
-      "claps": 21,
+      "claps": 22,
       "createdAt": "2019-09-29T00:00:00.000Z",
       "updateAt": "2020-03-26T14:35:21.519Z",
       "userId": 1
@@ -27,7 +27,7 @@
       "id": 2,
       "title": "1Название поста11112",
       "description": "1Текст",
-      "claps": 25,
+      "claps": 26,
       "createdAt": "2019-09-29T00:00:00.000Z",
       "updateAt": "2020-03-26T14:34:09.698Z",
       "userId": 2
