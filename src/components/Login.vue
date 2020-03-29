@@ -22,8 +22,8 @@
     </div>
     
     <div v-if="login !== null">
-      <p>{{login[0].login}}</p>
-      <p>{{login[0].role}}</p>
+      <p>Login: {{login[0].login}}</p>
+      <p>Role: {{login[0].role}}</p>
       <b-field>
         <b-button class="button is-primary" @click="exit()">Exit</b-button>
       </b-field>
