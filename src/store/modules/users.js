@@ -36,7 +36,7 @@ export default {
     },
     userExit(state){
       state.user = null;
-      state.errorMsg = false;
+      state.errorMsg = '';
     }
   },
   actions: {
