@@ -1,13 +1,10 @@
 <template>
   <section>
-    <b-field label="title"
-             type="is-success"
-             message="This title is available">
+    <b-field label="title">
       <b-input v-model="form.title"></b-input>
     </b-field>
     <b-field label="description">
-      <b-input type="is-success"
-               v-model="form.description">
+      <b-input v-model="form.description">
       </b-input>
     </b-field>
     <b-field>

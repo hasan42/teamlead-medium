@@ -1,22 +1,24 @@
 <template>
   <section>
     <div v-if="login === null">
-      <b-field label="Login">
-        <b-input type="email" 
-                 v-model="form.login"></b-input>
-      </b-field>
-      <b-field label="Password">
-        <b-input type="password" autocomplete="off"
-                 v-model="form.password">
-        </b-input>
-      </b-field>
-      <b-field v-if="showMessage"
-               type="is-danger"
-               message="Wrong login or password">
-      </b-field>
-      <b-field>
-        <b-button class="button is-primary" @click="loginIn()">Login</b-button>
-      </b-field>
+      <form>
+        <b-field label="Login">
+          <b-input type="email" 
+                   v-model="form.login"></b-input>
+        </b-field>
+        <b-field label="Password">
+          <b-input type="password" autocomplete="off"
+                   v-model="form.password">
+          </b-input>
+        </b-field>
+        <b-field v-if="showMessage !== ''"
+                 type="is-danger"
+                 :message="showMessage">
+        </b-field>
+        <b-field>
+          <b-button class="button is-primary" @click="loginIn()">Login</b-button>
+        </b-field>
+      </form>
     </div>
     
     <div v-if="login !== null">
@@ -57,11 +59,24 @@
     },
     methods: {
       async loginIn() {
-        let obj = {
-          login: this.form.login,
-          password: this.form.password
+        try{
+          if(this.form.login === ''){
+            throw 'Error: Need typee login.';
+          }
+          if(this.form.login.indexOf('@') < 0){
+            throw 'Error: Login is email.';
+          }
+          if(this.form.password === ''){
+            throw 'Error: Need typee password.';
+          }
+          let obj = {
+            login: this.form.login,
+            password: this.form.password
+          }
+          await this.$store.commit('users/userLogin', obj)
+        }catch(e){
+          this.$store.commit('users/makeError', e)
         }
-        await this.$store.commit('users/userLogin', obj)
       },
       async exit(){
         await this.$store.commit('users/userExit')

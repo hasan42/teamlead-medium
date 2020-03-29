@@ -103,33 +103,6 @@
       "createdAt": "2020-03-28T10:36:25.273Z",
       "updateAt": "2020-03-28T10:36:25.273Z",
       "userId": 1
-    },
-    {
-      "id": 12,
-      "title": "kjghfd",
-      "description": "gnbvc",
-      "claps": 0,
-      "createdAt": "2020-03-28T11:02:17.158Z",
-      "updateAt": "2020-03-28T11:02:17.158Z",
-      "userId": 1
-    },
-    {
-      "id": 14,
-      "title": "576",
-      "description": "576",
-      "claps": 0,
-      "createdAt": "2020-03-28T11:03:10.279Z",
-      "updateAt": "2020-03-28T11:03:10.279Z",
-      "userId": 1
-    },
-    {
-      "id": 15,
-      "title": "qwe",
-      "description": "qwe",
-      "claps": 0,
-      "createdAt": "2020-03-29T06:41:25.651Z",
-      "updateAt": "2020-03-29T06:41:25.651Z",
-      "userId": 1
     }
   ]
 }

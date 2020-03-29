@@ -11,7 +11,7 @@
         :userId="post.userId" />
 
     <hr>
-    <b-pagination
+    <b-pagination v-if="pageCount > 10"
         :total="pageCount"
         :per-page="perPage"
         :current.sync="currentPage"
