@@ -15,6 +15,7 @@
         :total="pageCount"
         :per-page="perPage"
         :current.sync="currentPage"
+        icon-pack="fas"
         aria-next-label="Next page"
         aria-previous-label="Previous page"
         aria-page-label="Page"

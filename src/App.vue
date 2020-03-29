@@ -1,11 +1,27 @@
 <template>
-  <div id="app" class="container">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/login">Login</router-link> |
-      <router-link v-if="role==='writer'" to="/new">Create new post</router-link>
+  <div id="app">
+    <nav id="nav" class="navbar is-link">
+      <div class="container">
+        
+        <div class="navbar-menu">
+          <div class="navbar-start">
+            <router-link class="navbar-item" to="/">Home</router-link>
+            <router-link class="navbar-item" v-if="role==='writer'" to="/new">Create new post</router-link>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <router-link class="button is-light" to="/login">Login</router-link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container wrap">
+      <router-view/>
     </div>
-    <router-view/>
   </div>
 </template>
 
@@ -28,17 +44,7 @@ export default {
 </script>
 
 <style lang="scss">
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  .wrap {
+    padding-top: 30px;
   }
-}
 </style>

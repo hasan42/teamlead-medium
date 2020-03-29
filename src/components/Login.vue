@@ -1,37 +1,44 @@
 <template>
   <section>
-    <div v-if="login === null">
-      <form>
-        <b-field label="Login">
-          <b-input type="email" 
-                   v-model="form.login"></b-input>
-        </b-field>
-        <b-field label="Password">
-          <b-input type="password" autocomplete="off"
-                   v-model="form.password">
-          </b-input>
-        </b-field>
-        <b-field v-if="showMessage !== ''"
-                 type="is-danger"
-                 :message="showMessage">
-        </b-field>
-        <b-field>
-          <b-button class="button is-primary" @click="loginIn()">Login</b-button>
-        </b-field>
-      </form>
+    <div class="columns is-mobile">
+      <div class="column is-three-fifths is-offset-one-fifth">
+        <div v-if="login === null">
+          <p class="title">Login</p>
+          <form>
+            <b-field label="Login">
+              <b-input type="email" 
+                       v-model="form.login"></b-input>
+            </b-field>
+            <b-field label="Password">
+              <b-input type="password" autocomplete="off"
+                       v-model="form.password">
+              </b-input>
+            </b-field>
+            <b-field v-if="showMessage !== ''"
+                     type="is-danger"
+                     :message="showMessage">
+            </b-field>
+            <b-field>
+              <b-button class="button is-primary" @click="loginIn()" icon-pack="fas" icon-left="sign-in-alt">Login</b-button>
+            </b-field>
+          </form>
+        </div>
+        
+        <div v-if="login !== null">
+          <p class="title">Current user</p>
+          <b-field label="Login">
+            {{login[0].login}}
+          </b-field>
+          <b-field label="Role">
+            {{login[0].role}}
+          </b-field>
+          <b-field>
+            <b-button class="button is-primary" @click="exit()" icon-pack="fas" icon-left="sign-out-alt">Exit</b-button>
+          </b-field>
+        </div>
+      </div>
     </div>
     
-    <div v-if="login !== null">
-      <b-field label="Login">
-        {{login[0].login}}
-      </b-field>
-      <b-field label="Role">
-        {{login[0].role}}
-      </b-field>
-      <b-field>
-        <b-button class="button is-primary" @click="exit()">Exit</b-button>
-      </b-field>
-    </div>
   </section>
 </template>
 
