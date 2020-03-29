@@ -1,15 +1,15 @@
 <template>
   <div class="new">
-    <NewPostComponent />
+    <EditPostComponent />
   </div>
 </template>
 
 <script>
-import NewPostComponent from '@/components/NewPost.vue'
+import EditPostComponent from '@/components/EditPost.vue'
 export default {
   name: 'NewPost',
   components: {
-    NewPostComponent
+    EditPostComponent
   }
 }
 </script>

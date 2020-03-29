@@ -16,11 +16,11 @@
   "posts": [
     {
       "id": 2,
-      "title": "1Названwие поста11112",
+      "title": "1Названwие поста111121",
       "description": "1Текст",
       "claps": 26,
       "createdAt": "2019-09-29T00:00:00.000Z",
-      "updateAt": "2020-03-28T11:04:03.143Z",
+      "updateAt": "2020-03-29T06:41:22.318Z",
       "userId": 2
     },
     {
@@ -120,6 +120,15 @@
       "claps": 0,
       "createdAt": "2020-03-28T11:03:10.279Z",
       "updateAt": "2020-03-28T11:03:10.279Z",
+      "userId": 1
+    },
+    {
+      "id": 15,
+      "title": "qwe",
+      "description": "qwe",
+      "claps": 0,
+      "createdAt": "2020-03-29T06:41:25.651Z",
+      "updateAt": "2020-03-29T06:41:25.651Z",
       "userId": 1
     }
   ]
